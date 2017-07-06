@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <math.h>
+
+#define product (mmm) (mmm * mmm）
 int main(int argc, char const *argv[])
 {
 	
@@ -17,13 +19,48 @@ int main(int argc, char const *argv[])
     
     int printChengFaKouJue();
 
+    //输出阶乘
+    
+    int printJieCheng();
+
+    int printJieCheng1();
+
     /* 调用函数 ---调用函数前 必须先声明函数 */
     question1();
     question2();
     maoPaoSort();
     printChengFaKouJue();
 
+    
+
+     int a[5]={1,2,3,4,5};
+     int *ptr=(int *)(&a+1);  
+     printf("%d,%d",*(a+1),*(ptr-1));
+
+
+    int getSqure();
+
+     int i= 3, j, k;
+  	j = getSqure(i++);
+  	k = getSqure(++i); 
+    printf("j = %d, k = %d", j, k);
+
+
+printJieCheng(5);
+printJieCheng1(5);
+
+
+printJieCheng(3);
+printJieCheng1(3);
 	return 0;
+}
+
+
+int getSqure(int mm){
+
+
+   return mm * mm;
+
 }
 
 int question1(){
@@ -116,3 +153,56 @@ return 0;
 
 }
 
+//求n的阶乘
+
+int printJieCheng(int N){
+
+
+int temp = 1;
+
+	if(N >= 1){
+
+		for (int i = N; i > 0; i--)
+		{
+			// printf("%d \n",temp);
+
+			temp = temp * i;
+
+			printf("\n %d =  %d * %d \n",temp, temp ,i );
+		}
+
+printf("%d \n",temp);
+return temp;
+
+
+
+	}else{
+
+		return 0;
+	}
+
+
+
+	return 0;
+}
+//求n的阶乘 do while
+
+int printJieCheng1(int N){
+
+
+int temp = 1;
+
+
+while (N > 0){
+
+			temp *= N;
+			N--;
+
+printf("\n %d\n", temp);
+		}
+
+
+
+
+   return 0;
+}
